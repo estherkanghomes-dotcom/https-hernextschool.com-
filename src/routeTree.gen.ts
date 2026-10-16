@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CurriculumRouteImport } from './routes/curriculum'
 import { Route as NotesRouteImport } from './routes/notes'
@@ -26,6 +27,7 @@ import { Route as StartRouteImport } from './routes/start'
 import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as StoryRouteImport } from './routes/story'
 import { Route as AuthenticatedAppRouteImport } from './routes/_authenticated/app'
+import { Route as ChapterNRouteImport } from './routes/chapter.$n'
 import { Route as NotesSlugRouteImport } from './routes/notes.$slug'
 import { Route as AuthenticatedAppIndexRouteImport } from './routes/_authenticated/app.index'
 import { Route as AuthenticatedAppDiscoverRouteImport } from './routes/_authenticated/app.discover'
@@ -54,6 +56,11 @@ const AboutRoute = AboutRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -121,6 +128,11 @@ const AuthenticatedAppRoute = AuthenticatedAppRouteImport.update({
   path: '/app',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const ChapterNRoute = ChapterNRouteImport.update({
+  id: '/chapter/$n',
+  path: '/chapter/$n',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NotesSlugRoute = NotesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -180,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/notes': typeof NotesRouteWithChildren
@@ -193,6 +206,7 @@ export interface FileRoutesByFullPath {
   '/stories': typeof StoriesRoute
   '/story': typeof StoryRoute
   '/app': typeof AuthenticatedAppRouteWithChildren
+  '/chapter/$n': typeof ChapterNRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/app/discover': typeof AuthenticatedAppDiscoverRoute
   '/app/next': typeof AuthenticatedAppNextRoute
@@ -208,6 +222,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/notes': typeof NotesRouteWithChildren
@@ -220,6 +235,7 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/stories': typeof StoriesRoute
   '/story': typeof StoryRoute
+  '/chapter/$n': typeof ChapterNRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/app/discover': typeof AuthenticatedAppDiscoverRoute
   '/app/next': typeof AuthenticatedAppNextRoute
@@ -237,6 +253,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/notes': typeof NotesRouteWithChildren
@@ -250,6 +267,7 @@ export interface FileRoutesById {
   '/stories': typeof StoriesRoute
   '/story': typeof StoryRoute
   '/_authenticated/app': typeof AuthenticatedAppRouteWithChildren
+  '/chapter/$n': typeof ChapterNRoute
   '/notes/$slug': typeof NotesSlugRoute
   '/_authenticated/app/discover': typeof AuthenticatedAppDiscoverRoute
   '/_authenticated/app/next': typeof AuthenticatedAppNextRoute
@@ -267,6 +285,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/checkout'
     | '/contact'
     | '/curriculum'
     | '/notes'
@@ -280,6 +299,7 @@ export interface FileRouteTypes {
     | '/stories'
     | '/story'
     | '/app'
+    | '/chapter/$n'
     | '/notes/$slug'
     | '/app/discover'
     | '/app/next'
@@ -295,6 +315,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/checkout'
     | '/contact'
     | '/curriculum'
     | '/notes'
@@ -307,6 +328,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/stories'
     | '/story'
+    | '/chapter/$n'
     | '/notes/$slug'
     | '/app/discover'
     | '/app/next'
@@ -323,6 +345,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/about'
     | '/auth'
+    | '/checkout'
     | '/contact'
     | '/curriculum'
     | '/notes'
@@ -336,6 +359,7 @@ export interface FileRouteTypes {
     | '/stories'
     | '/story'
     | '/_authenticated/app'
+    | '/chapter/$n'
     | '/notes/$slug'
     | '/_authenticated/app/discover'
     | '/_authenticated/app/next'
@@ -353,6 +377,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
+  CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
   CurriculumRoute: typeof CurriculumRoute
   NotesRoute: typeof NotesRouteWithChildren
@@ -365,6 +390,7 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   StoriesRoute: typeof StoriesRoute
   StoryRoute: typeof StoryRoute
+  ChapterNRoute: typeof ChapterNRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
@@ -396,6 +422,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -488,6 +521,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/app'
       preLoaderRoute: typeof AuthenticatedAppRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/chapter/$n': {
+      id: '/chapter/$n'
+      path: '/chapter/$n'
+      fullPath: '/chapter/$n'
+      preLoaderRoute: typeof ChapterNRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/notes/$slug': {
       id: '/notes/$slug'
@@ -613,6 +653,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
+  CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
   CurriculumRoute: CurriculumRoute,
   NotesRoute: NotesRouteWithChildren,
@@ -625,6 +666,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   StoriesRoute: StoriesRoute,
   StoryRoute: StoryRoute,
+  ChapterNRoute: ChapterNRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
