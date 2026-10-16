@@ -35,7 +35,7 @@ export const template = {
     `[HER NEXT] 새 상담 신청 — ${data.name || '신청자'}`,
   displayName: '상담 신청 알림',
   previewData: { name: '김지현', email: 'jihyun@example.com' },
-  to: 'estherkanghomes@gmail.com',
+  to: 'esther@hernextschool.com',
 } satisfies TemplateEntry
 
 const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
