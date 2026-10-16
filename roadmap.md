@@ -1,0 +1,6 @@
+- [x] Check available uploads for verified Cohort 1 activity photos; label empty gallery slots when unavailable.
+- [x] Keep industry AI practice examples on curriculum and programs without unverified outcome claims.
+- [x] Verify the AI Gateway planner produces a personalized result from idea, experience, and budget.
+- [x] Verify mobile main, story, and gallery views.
+- [x] Publish the site and check the live address; custom domain needs an owned domain name.
+- [x] Share the live site link so anyone can open it (https://hernextschool.com).
