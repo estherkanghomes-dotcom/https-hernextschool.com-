@@ -34,9 +34,9 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-3 text-[13px] text-ink/75">
-          <Link to="/start" className="hidden whitespace-nowrap font-medium hover:text-berry sm:inline">
+          <a href="/ai-diagnosis/" className="hidden whitespace-nowrap font-medium hover:text-berry sm:inline">
             {lang === "kr" ? "무료 진단" : "Free assessment"}
-          </Link>
+          </a>
           <span className="hidden text-ink/30 sm:inline" aria-hidden="true">|</span>
           <Link to="/checkout" search={{ item: "cohort" }} className="hidden whitespace-nowrap rounded bg-berry px-3 py-1 font-bold text-white hover:opacity-90 sm:inline">
             {lang === "kr" ? "수강 신청" : "Enroll"}
@@ -138,9 +138,9 @@ export function SiteHeader() {
                 {l.label[lang]}
               </Link>
             ))}
-            <Link to="/start" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-ink/75 sm:hidden">
+            <a href="/ai-diagnosis/" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-ink/75 sm:hidden">
               {lang === "kr" ? "무료 진단" : "Free assessment"}
-            </Link>
+            </a>
             <Link to="/checkout" search={{ item: "cohort" }} onClick={() => setOpen(false)} className="py-3 text-base font-bold text-berry sm:hidden">
               {lang === "kr" ? "수강 신청" : "Enroll"}
             </Link>
