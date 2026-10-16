@@ -208,7 +208,7 @@ export function CohortSections() {
                   search={{ item: "consult" }}
                   className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-berry pb-0.5 text-sm font-semibold text-plum transition-colors hover:text-berry"
                 >
-                  {lang === "kr" ? "예약 · 결제하기" : "Book & pay"}
+                  {lang === "kr" ? "신청하기" : "Apply"}
                   <span aria-hidden>→</span>
                 </Link>
               </div>

@@ -19,8 +19,8 @@ export function SiteSearch() {
   const index = useMemo<Hit[]>(() => {
     const page = (label: string, sub: string, to: string, search?: Record<string, string>): Hit => ({ label, sub, go: () => nav({ to, search } as never) });
     return [
-      page(kr ? "4주 AI 클래스 2기 수강 신청" : "Enroll in the 4-week AI Class", kr ? "결제" : "Checkout", "/checkout", { item: "cohort" }),
-      page(kr ? "1:1 컨설팅 예약" : "Book 1:1 consulting", kr ? "결제" : "Checkout", "/checkout", { item: "consult" }),
+      page(kr ? "4주 AI 클래스 2기 수강 신청" : "Enroll in the 4-week AI Class", kr ? "신청서" : "Apply", "/checkout", { item: "cohort" }),
+      page(kr ? "1:1 컨설팅 예약" : "Book 1:1 consulting", kr ? "신청서" : "Apply", "/checkout", { item: "consult" }),
       page(kr ? "프로그램 안내" : "Programs", kr ? "프로그램" : "Programs", "/programs"),
       page(kr ? "4주 커리큘럼" : "4-week curriculum", kr ? "프로그램" : "Programs", "/programs", { s: "cohort" }),
       page(kr ? "가격 · 포함 사항" : "Pricing", kr ? "프로그램" : "Programs", "/programs", { s: "pricing" }),

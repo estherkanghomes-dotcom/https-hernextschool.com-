@@ -664,6 +664,13 @@ export const program = {
       },
     },
     {
+      q: { kr: "신청은 어떻게 하나요?", en: "How do I apply?" },
+      a: {
+        kr: "수강 신청서를 보내주시면 1~2일 안에 확인 연락과 결제 안내를 드립니다. 결제 순서대로 자리가 확정되고, 반별 정원이 차면 마감됩니다.",
+        en: "Send the application form and we'll follow up within 1–2 days with a confirmation and payment instructions. Seats are confirmed in order of payment until each class is full.",
+      },
+    },
+    {
       q: { kr: "환불 규정은 어떻게 되나요?", en: "What is the refund policy?" },
       a: {
         kr: "첫 세션 후 만족하지 못하시면 전액 환불해드립니다.",
