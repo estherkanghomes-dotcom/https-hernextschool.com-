@@ -441,20 +441,22 @@ export const resources = {
 };
 
 /* ------------------------------------------------------------------ Contact */
+export type Channel = { label: string | L; href?: string; copy?: string };
+
 export const contact = {
   hero: {
     eyebrow: { kr: "문의 · 신청", en: "Contact" },
     title: { kr: "상담 및 신청", en: "Consultation & Enrollment" },
     sub: { kr: "프로그램 상담과 수강 신청을 받고 있습니다.", en: "Inquiries and enrollment for HER NEXT programs." },
   },
-  email: "hello@hernextschool.com",
+  email: "esther@hernextschool.com",
   location: { kr: "New Jersey, USA", en: "New Jersey, USA" },
   channelsHead: { kr: "커뮤니티", en: "Community" },
   channels: [
     { label: "Instagram @i.m_possible.esther", href: "https://www.instagram.com/i.m_possible.esther/" },
-    { label: "YouTube", href: "#" },
-    { label: { kr: "카카오톡 ID: esther3hground", en: "KakaoTalk ID: esther3hground" }, href: "#" },
-  ] as { label: string | L; href: string }[],
+    { label: "YouTube @EstherKangHomes", href: "https://www.youtube.com/@EstherKangHomes" },
+    { label: { kr: "카카오톡 ID: esther3hground", en: "KakaoTalk ID: esther3hground" }, copy: "esther3hground" },
+  ] as Channel[],
 };
 
 /* --------------------------------------------------------------- Signup form */

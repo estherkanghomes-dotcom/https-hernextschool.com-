@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { SignupForm } from "@/components/SignupForm";
 import { useLang } from "@/lib/i18n";
 import { contact } from "@/lib/content";
+import { ChannelLink } from "@/components/ChannelLink";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "HER NEXT 무료 상담 신청. AI로 무엇을 시작할 수 있을지, 다음 한 걸음을 함께 설계합니다. hello@hernextschool.com",
+          "HER NEXT 무료 상담 신청. AI로 무엇을 시작할 수 있을지, 다음 한 걸음을 함께 설계합니다. esther@hernextschool.com",
       },
       { property: "og:title", content: "문의·신청 | HER NEXT" },
       { property: "og:description", content: "첫 상담은 무료입니다." },
@@ -64,13 +65,12 @@ function Contact() {
                 <ul className="mt-3 space-y-2">
                   {contact.channels.map((c, i) => (
                     <li key={i}>
-                      <a
-                        href={c.href}
-                        className="inline-flex items-center gap-2 text-lg text-plum transition-colors hover:text-berry"
+                      <ChannelLink
+                        c={c}
+                        className="inline-flex items-center gap-2 text-left text-lg text-plum transition-colors hover:text-berry"
                       >
                         <RisingArrow className="h-4 w-4 text-berry" />
-                        {typeof c.label === "string" ? c.label : c.label[lang]}
-                      </a>
+                      </ChannelLink>
                     </li>
                   ))}
                 </ul>

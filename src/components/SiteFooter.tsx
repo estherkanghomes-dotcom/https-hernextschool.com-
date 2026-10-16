@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import { navLinks, footerLinks, footer, contact } from "@/lib/content";
+import { ChannelLink } from "./ChannelLink";
 
 export function SiteFooter() {
   const { lang } = useLang();
@@ -46,9 +47,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {contact.channels.map((c, i) => (
               <li key={i}>
-                <a href={c.href} className="transition-colors hover:text-cream">
-                  {typeof c.label === "string" ? c.label : c.label[lang]}
-                </a>
+                <ChannelLink c={c} className="text-left transition-colors hover:text-cream" />
               </li>
             ))}
             <li>
