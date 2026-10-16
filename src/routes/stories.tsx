@@ -36,21 +36,6 @@ function Stories() {
         sub={stories.hero.sub[lang]}
       />
 
-      <section className="bg-blush">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <dl className="grid grid-cols-3 gap-6 text-center">
-            {stories.stats.map((s, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <dt className="font-serif text-4xl font-semibold text-berry md:text-5xl">
-                  {s.num}
-                </dt>
-                <dd className="mt-2 text-sm leading-snug text-ink/70">{s.label[lang]}</dd>
-              </Reveal>
-            ))}
-          </dl>
-        </div>
-      </section>
-
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid gap-6 md:grid-cols-3">

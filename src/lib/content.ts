@@ -61,12 +61,6 @@ export const home = {
     ctaPrimary: { kr: "무료 상담 신청", en: "Book a free consult" },
     ctaSecondary: { kr: "프로그램 보기", en: "View programs" },
   },
-  stats: [
-    { num: "20+", label: { kr: "취득한 라이센스", en: "licenses earned" } },
-    { num: "200+", label: { kr: "함께한 여성 수강생", en: "women mentored" } },
-    { num: "35+", label: { kr: "년 미국 현장 경험", en: "years in the U.S." } },
-    { num: "$1M", label: { kr: "커미션 달성 (3년)", en: "in commissions (3 yrs)" } },
-  ] as { num: string; label: L }[],
   learnTitle: { kr: "무엇을 배우나요", en: "What you'll learn" },
   learnHead: {
     kr: "AI를 도구가 아니라, 내 사업의 팀으로 만듭니다",
@@ -389,11 +383,6 @@ export const stories = {
     title: { kr: "수강 성과 및 후기", en: "Results & Testimonials" },
     sub: { kr: "HER NEXT 수강생들의 진행 사례와 후기입니다.", en: "Progress and feedback from HER NEXT participants." },
   },
-  stats: [
-    { num: "200+", label: { kr: "함께한 여성", en: "women served" } },
-    { num: "50+", label: { kr: "설립된 사업체", en: "businesses formed" } },
-    { num: "6주", label: { kr: "평균 첫 실행까지", en: "avg. to first launch" } },
-  ] as { num: string; label: L }[],
   testimonials: [
     {
       quote: {
