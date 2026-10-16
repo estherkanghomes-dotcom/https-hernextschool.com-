@@ -386,27 +386,27 @@ export const stories = {
   testimonials: [
     {
       quote: {
-        kr: "컴퓨터도 잘 못하는 제가 AI로 웹사이트를 만들고 LLC 설립까지 6주 만에 끝냈어요. 이제 제 이름으로 된 회사가 있습니다.",
-        en: "I barely use computers, yet I built a website with AI and formed my LLC in six weeks. Now I have a company in my own name.",
+        kr: "AI는 저와는 먼 이야기라고 생각했어요. 수업을 들으며 하나씩 직접 해보니 자신감이 생겼고, 머릿속에만 있던 아이디어들을 실제 계획으로 정리할 수 있었어요. 그렇게 우리 동네에 도움이 되는 로컬 플랫폼, Nearo를 시작하게 되었습니다.",
+        en: "I used to think AI had nothing to do with me. Trying things hands-on in class gave me confidence, and I finally turned the ideas in my head into a real plan. That's how I started Nearo, a local platform that helps our community.",
       },
-      name: { kr: "J. 김 · 뉴저지", en: "J. Kim · New Jersey" },
-      role: { kr: "온라인 리테일 창업", en: "Online retail founder" },
+      name: { kr: "R. Kang · 뉴저지", en: "R. Kang · New Jersey" },
+      role: { kr: "Nearo 플랫폼 창업", en: "Founder, Nearo" },
     },
     {
       quote: {
-        kr: "SNS 글쓰기가 제일 힘들었는데, AI가 제 목소리로 콘텐츠를 만들어주니까 홍보가 즐거워졌어요.",
-        en: "Writing posts was my hardest part. Now AI creates content in my voice, and marketing is actually fun.",
+        kr: "본업 업무에 AI 자동화를 세팅한 뒤로 고객 문의가 눈에 띄게 늘었어요. 반복 업무를 AI가 맡아주니 시간이 생겼고, 지금은 그 시간으로 유튜브와 프린터블 온라인 비즈니스까지 함께 하고 있어요.",
+        en: "After setting up AI automations for my main job, client leads clearly picked up. With AI handling the repetitive work, I gained time — and now I'm also running a YouTube channel and a printables business on the side.",
       },
-      name: { kr: "S. 이 · 뉴욕", en: "S. Lee · New York" },
-      role: { kr: "홈베이킹 스튜디오", en: "Home baking studio" },
+      name: { kr: "M.J.", en: "M.J." },
+      role: { kr: "리얼터 · 유튜브 크리에이터", en: "Realtor · YouTube creator" },
     },
     {
       quote: {
-        kr: "같은 길을 걷는 여성들과 함께라서 끝까지 올 수 있었어요. 첫 고객을 코호트 중에 만났습니다.",
-        en: "Walking with other women is why I finished. I landed my first client during the cohort.",
+        kr: "수업을 들으며 이커머스 상품 고르기부터 마케팅, 고객 리드 관리까지 AI로 자동화했어요. 손이 덜 가는 만큼 새로운 비즈니스 아이디어가 계속 떠올라서, 요즘은 다음 계획을 세우는 게 즐거워요.",
+        en: "During the class I automated my e-commerce work with AI — from picking products to marketing and managing leads. With less busywork, new business ideas keep coming, and planning what's next is now the fun part.",
       },
-      name: { kr: "H. 박 · 뉴저지", en: "H. Park · New Jersey" },
-      role: { kr: "뷰티 서비스", en: "Beauty services" },
+      name: { kr: "J. Kim · 뉴저지", en: "J. Kim · New Jersey" },
+      role: { kr: "온라인 비즈니스", en: "Online business" },
     },
   ] as { quote: L; name: L; role: L }[],
 };
