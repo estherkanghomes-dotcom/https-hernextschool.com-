@@ -156,3 +156,44 @@ export function CardNewsGallery() {
     </section>
   );
 }
+
+// Promo for the free 1-minute AI diagnosis (standalone page outside the router).
+export function DiagnosisPromo({ tone = "light" }: { tone?: "light" | "dark" }) {
+  const { lang } = useLang();
+  const kr = lang === "kr";
+  const dark = tone === "dark";
+  return (
+    <section className={dark ? "bg-plum text-cream" : "bg-white"}>
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <Reveal>
+          <div
+            className={
+              "flex flex-col items-start gap-6 rounded-2xl p-8 md:flex-row md:items-center md:justify-between md:p-10 " +
+              (dark ? "bg-white/5 ring-1 ring-white/10" : "border-2 border-berry/30 bg-gradient-to-r from-berry/10 via-white to-white")
+            }
+          >
+            <div>
+              <span className={"inline-flex items-center rounded-full px-3 py-1 text-xs font-bold " + (dark ? "bg-berry text-white" : "bg-white text-berry shadow-sm")}>
+                {kr ? "무료 · 질문 8개 · 1분" : "Free · 8 questions · 1 minute"}
+              </span>
+              <h2 className={"mt-3 text-2xl font-extrabold md:text-3xl " + (dark ? "text-cream" : "text-plum")}>
+                {kr ? "내 사업 AI 진단, 1분이면 끝납니다" : "Your business AI check — done in 1 minute"}
+              </h2>
+              <p className={"mt-2 max-w-xl " + (dark ? "text-cream/75" : "text-ink/70")}>
+                {kr
+                  ? "무엇을 어디에 알리고 AI에게 무엇을 맡길지, 내 사업에 맞춘 4주 실행 계획과 바로 쓰는 AI 요청문까지 정리해 드립니다."
+                  : "Get a 4-week plan for what to share, where, and what to hand off to AI — plus ready-to-use AI prompts."}
+              </p>
+            </div>
+            <a
+              href="/ai-diagnosis/"
+              className="shrink-0 rounded-md bg-berry px-7 py-4 text-base font-bold text-white transition-transform hover:-translate-y-0.5"
+            >
+              {kr ? "무료 AI 진단 시작하기 →" : "Start the free AI check →"}
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

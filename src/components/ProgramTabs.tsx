@@ -1,14 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 
-type Tab = { to: string; kr: string; en: string };
+type Tab = { to: string; kr: string; en: string; static?: boolean };
 
 // Pill tab bar used under a page title to switch between sibling pages.
 export function SubTabs({ tabs, current, label }: { tabs: readonly Tab[]; current: string; label: string }) {
   const { lang } = useLang();
   return (
     <nav aria-label={label} className="inline-flex max-w-full overflow-x-auto rounded-full border border-plum/15 bg-white p-1">
-      {tabs.map((t) => (
+      {tabs.map((t) => t.static ? (
+        <a key={t.to} href={t.to} className="!rounded-full whitespace-nowrap px-5 py-2 text-sm font-bold text-berry transition-colors hover:bg-blush">
+          ✦ {t[lang]}
+        </a>
+      ) : (
         <Link
           key={t.to}
           to={t.to}
@@ -47,8 +51,9 @@ export function AboutTabs({ current }: { current: (typeof aboutTabs)[number]["to
   return <SubTabs tabs={aboutTabs} current={current} label="About menu" />;
 }
 
-// 에스더의 픽 · 무료 자료 · AI 플래너
+// 무료 AI 진단 · 에스더의 픽 · 무료 자료 · AI 플래너
 const freeTabs = [
+  { to: "/ai-diagnosis/", kr: "무료 AI 진단", en: "Free AI check", static: true },
   { to: "/picks", kr: "에스더의 픽", en: "Esther's Picks" },
   { to: "/resources", kr: "무료 자료", en: "Free Resources" },
   { to: "/planner", kr: "AI 플래너", en: "AI Planner" },

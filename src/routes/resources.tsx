@@ -6,6 +6,7 @@ import { SignupForm } from "@/components/SignupForm";
 import { useLang } from "@/lib/i18n";
 import { resources } from "@/lib/content";
 import { FreeTabs } from "@/components/ProgramTabs";
+import { DiagnosisPromo } from "@/components/HomeProof";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -37,6 +38,8 @@ function Resources() {
       >
         <FreeTabs current="/resources" />
       </PageHero>
+
+      <DiagnosisPromo />
 
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr]">

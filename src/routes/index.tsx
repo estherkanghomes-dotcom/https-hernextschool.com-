@@ -11,7 +11,7 @@ import { BrandPhoto } from "@/components/BrandPhoto";
 import { ProductCards } from "@/components/ProductCards";
 import { WeeksPreview, HomeFaq } from "@/components/HomeExtras";
 import { HomeBanner, CategoryRow, NotesRow, FreeRow } from "@/components/HomeBrowse";
-import { MyDayWithAI, RealResults } from "@/components/HomeProof";
+import { MyDayWithAI, RealResults, DiagnosisPromo } from "@/components/HomeProof";
 // Photos are credibility-first: only the founder's REAL photos render.
 // Drop-in slots: src/assets/esther-hero.jpg (landing hero seminar stage photo),
 // src/assets/esther-story.jpg (founder portrait). Until a real file exists at the
@@ -47,6 +47,8 @@ function Index() {
       <HomeBanner />
 
       <CategoryRow />
+
+      <DiagnosisPromo />
 
       <MyDayWithAI />
 

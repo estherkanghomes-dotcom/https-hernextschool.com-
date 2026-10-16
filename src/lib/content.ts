@@ -19,6 +19,7 @@ export const navLinks = [
     to: "/picks",
     label: { kr: "무료 콘텐츠", en: "Free" },
     children: [
+      { to: "/ai-diagnosis/", label: { kr: "무료 AI 진단 (1분)", en: "Free AI assessment (1 min)" }, static: true },
       { to: "/picks", label: { kr: "에스더의 픽", en: "Esther's Picks" } },
       { to: "/resources", label: { kr: "무료 자료", en: "Free Resources" } },
       { to: "/planner", label: { kr: "AI 플래너", en: "AI Planner" } },
@@ -26,7 +27,10 @@ export const navLinks = [
   },
   { to: "/stories", label: { kr: "성과·후기", en: "Stories" } },
   { to: "/contact", label: { kr: "문의", en: "Contact" } },
-] as { to: string; label: L; children?: { to: string; label: L }[]; also?: string[] }[];
+] as { to: string; label: L; children?: { to: string; label: L; static?: boolean }[]; also?: string[] }[];
+
+// Standalone diagnosis app served from public/ai-diagnosis (outside the router).
+export const diagnosisUrl = "/ai-diagnosis/";
 
 /* Extra links surfaced in the footer only (detail pages) */
 export const footerLinks = [

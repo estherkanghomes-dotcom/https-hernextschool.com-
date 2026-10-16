@@ -34,10 +34,9 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-3 text-[13px] text-ink/75">
-          <a href="/ai-diagnosis/" className="hidden whitespace-nowrap font-medium hover:text-berry sm:inline">
-            {lang === "kr" ? "무료 진단" : "Free assessment"}
+          <a href="/ai-diagnosis/" className="whitespace-nowrap rounded border border-berry px-2.5 py-1 font-bold text-berry transition-colors hover:bg-berry hover:text-white">
+            {lang === "kr" ? "무료 AI 진단" : "Free AI check"}
           </a>
-          <span className="hidden text-ink/30 sm:inline" aria-hidden="true">|</span>
           <Link to="/checkout" search={{ item: "cohort" }} className="hidden whitespace-nowrap rounded bg-berry px-3 py-1 font-bold text-white hover:opacity-90 sm:inline">
             {lang === "kr" ? "수강 신청" : "Enroll"}
           </Link>
@@ -93,7 +92,15 @@ export function SiteHeader() {
               {/* hover / keyboard-focus dropdown */}
               <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <div className="min-w-[180px] overflow-hidden rounded-lg border border-plum/10 bg-white py-2 shadow-xl">
-                  {l.children.map((c) => (
+                  {l.children.map((c) => c.static ? (
+                    <a
+                      key={c.to}
+                      href={c.to}
+                      className="block whitespace-nowrap px-5 py-2.5 text-sm font-bold text-berry transition-colors hover:bg-blush"
+                    >
+                      ✦ {c.label[lang]}
+                    </a>
+                  ) : (
                     <Link
                       key={c.to}
                       to={c.to}
@@ -126,7 +133,16 @@ export function SiteHeader() {
         <div className="border-t border-[#e5e5e5] bg-white lg:hidden">
           <div className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-6">
             <div className="py-2 md:hidden"><SiteSearch /></div>
-            {navLinks.flatMap((l) => (l.children ? [l, ...l.children.map((c) => ({ ...c, sub: true }))] : [l])).map((l, i) => (
+            {navLinks.flatMap((l) => (l.children ? [l, ...l.children.map((c) => ({ ...c, sub: true }))] : [l])).map((l, i) => "static" in l && l.static ? (
+              <a
+                key={l.to + i}
+                href={l.to}
+                onClick={() => setOpen(false)}
+                className="border-b border-[#f0f0f0] py-3 pl-4 text-base font-bold text-berry"
+              >
+                ✦ {l.label[lang]}
+              </a>
+            ) : (
               <Link
                 key={l.to + i}
                 to={l.to}
@@ -138,9 +154,6 @@ export function SiteHeader() {
                 {l.label[lang]}
               </Link>
             ))}
-            <a href="/ai-diagnosis/" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-ink/75 sm:hidden">
-              {lang === "kr" ? "무료 진단" : "Free assessment"}
-            </a>
             <Link to="/checkout" search={{ item: "cohort" }} onClick={() => setOpen(false)} className="py-3 text-base font-bold text-berry sm:hidden">
               {lang === "kr" ? "수강 신청" : "Enroll"}
             </Link>
