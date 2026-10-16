@@ -25,11 +25,11 @@ export function SubTabs({ tabs, current, label }: { tabs: readonly Tab[]; curren
   );
 }
 
-// 프로그램 안내 · 커리큘럼 · 6주 AI 코호트
+// 프로그램 안내 · 커리큘럼 · 4주 AI 클래스
 const programTabs = [
   { to: "/programs", kr: "프로그램 안내", en: "Overview" },
   { to: "/curriculum", kr: "커리큘럼", en: "Curriculum" },
-  { to: "/program", kr: "6주 AI 코호트", en: "6-Week Cohort" },
+  { to: "/program", kr: "4주 AI 클래스", en: "4-Week AI Class" },
 ] as const;
 
 export function ProgramTabs({ current }: { current: (typeof programTabs)[number]["to"] }) {

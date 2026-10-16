@@ -20,10 +20,10 @@ export const products: Record<ProductId, Product> = {
   cohort: {
     id: "cohort",
     tag: program.pricing.tag,
-    name: { kr: "6주 AI 코호트", en: "6-Week AI Cohort" },
+    name: { kr: "4주 AI 클래스 · 초급반", en: "4-Week AI Class · Beginner" },
     price: usd(program.pricing.special),
     regular: usd(program.pricing.regular),
-    meta: { kr: "주 1회 라이브 · 6주 · 정원 8명", en: "Weekly live · 6 weeks · 8 seats" },
+    meta: { kr: "주 1회 2시간 · 4주 · 반별 8~10명", en: "Weekly 2-hour live · 4 weeks · 8–10 per class" },
     desc: program.pricing.note,
   },
   consult: {

@@ -55,8 +55,8 @@ export const home = {
       en: "We teach you to use AI like an employee for your business. From idea discovery to branding, marketing, and automation — 20 years of real experience, supercharged by AI.",
     },
     subShort: {
-      kr: "AI로 아이디어를 찾고, 브랜드를 만들고, 첫 고객을 만나기까지 — 20년의 실전 경험으로 함께 설계합니다.",
-      en: "From finding your idea with AI to building your brand and landing your first client — designed together with 20 years of experience.",
+      kr: "리얼터 한 명이 AI 3명과 팀처럼 일하는 법, 그대로 알려드립니다.",
+      en: "How one realtor works with three AIs like a team — taught exactly as it's done.",
     },
     ctaPrimary: { kr: "무료 상담 신청", en: "Book a free consult" },
     ctaSecondary: { kr: "프로그램 보기", en: "View programs" },
@@ -158,8 +158,8 @@ export const home = {
       en: "With AI, solo is enough",
     },
     sub: {
-      kr: "6주 AI 코호트에서 아이디어부터 브랜딩·마케팅·자동화까지 실전으로 완성합니다.",
-      en: "A 6-week AI cohort that takes you from idea to branding, marketing, and automation — hands-on.",
+      kr: "4주 AI 클래스 초급반에서 나만의 AI 비서를 만들고, 중급·고급으로 이어갑니다.",
+      en: "Build your own AI assistant in the 4-week beginner class, then continue to intermediate and advanced.",
     },
     cta: { kr: "프로그램 보기", en: "View programs" },
   },
@@ -237,7 +237,7 @@ export const programs = {
   hero: {
     eyebrow: { kr: "프로그램", en: "Programs" },
     title: { kr: "프로그램 안내", en: "Programs" },
-    sub: { kr: "6단계 AI 로드맵을 바탕으로 6주 AI 코호트와 1:1 컨설팅을 운영합니다.", en: "A six-step AI roadmap, delivered through a six-week AI cohort and 1:1 consulting." },
+    sub: { kr: "AI 로드맵을 바탕으로 4주 AI 클래스(초급 → 중급 → 고급)와 1:1 컨설팅을 운영합니다.", en: "An AI roadmap, delivered through the 4-week AI Class (beginner → intermediate → advanced) and 1:1 consulting." },
   },
   roadmapHead: { kr: "6단계 AI 로드맵", en: "The 6-step AI roadmap" },
   roadmap: [
@@ -285,19 +285,19 @@ export const programs = {
   offers: {
     head: { kr: "함께하는 방법", en: "Ways to work with us" },
     main: {
-      tag: { kr: "시그니처 · 6주 AI 코호트", en: "Signature · 6-week AI cohort" },
-      title: { kr: "AI 비즈니스 부트캠프", en: "The AI Business Bootcamp" },
+      tag: { kr: "2기 초급반 · 4주 AI 클래스", en: "Cohort 2 · 4-week AI Class" },
+      title: { kr: "HER NEXT AI CLASS", en: "HER NEXT AI CLASS" },
       body: {
-        kr: "소그룹(8~12명)으로 6주간 AI로 사업 아이디어를 찾고, 브랜드를 만들고, 첫 고객까지 실행합니다. 주 1회 라이브 + AI 실습 과제 + 단톡방 코칭, 마지막 주엔 각자의 첫 실행을 발표합니다.",
-        en: "In a small group of 8–12, you'll find your idea with AI, build your brand, and reach your first client over six weeks. Weekly live sessions, AI hands-on assignments, group coaching, and a final showcase.",
+        kr: "반별 8~10명 소수 정예로 4주간 ChatGPT·Claude 기본부터 실습까지 배웁니다. 이메일·문서·SNS 게시물을 직접 만들고, 수료할 때는 나만의 AI 비서(My AI Assistant)가 생깁니다.",
+        en: "In small classes of 8–10, you'll learn ChatGPT and Claude from the basics to hands-on practice over four weeks. You'll make your own emails, documents and SNS posts, and graduate with your own AI assistant.",
       },
       points: [
-        { kr: "주 1회 라이브 세션 + AI 실습 (6주)", en: "Weekly live sessions + AI practice (6 weeks)" },
-        { kr: "ChatGPT·Claude·Canva 실전 활용법", en: "Hands-on ChatGPT, Claude & Canva" },
-        { kr: "여성 창업자 단톡방 코칭", en: "Women founders group coaching" },
+        { kr: "주 1회 2시간 (강의 90분 + 그룹 코칭 30분) · 4주", en: "2 hours a week (90-min class + 30-min coaching) · 4 weeks" },
+        { kr: "전용 워크북 + 매주 과제와 피드백", en: "Dedicated workbook + weekly practice and feedback" },
+        { kr: "초급 → 중급 → 고급, 단계별로 이어지는 과정", en: "Beginner → intermediate → advanced, step by step" },
       ] as L[],
-      cta: { kr: "1기 대기 신청", en: "Join the waitlist" },
-      note: { kr: "1기 특별가로 모집됩니다.", en: "Founding-class pricing." },
+      cta: { kr: "2기 수강 신청", en: "Enroll in Cohort 2" },
+      note: { kr: "2기 한정 50% 할인 · 3기부터 정가", en: "Cohort 2 only: 50% off · regular price from Cohort 3" },
     },
     side: {
       tag: { kr: "1:1 컨설팅", en: "1:1 Consulting" },
@@ -462,9 +462,9 @@ export const contact = {
   location: { kr: "New Jersey, USA", en: "New Jersey, USA" },
   channelsHead: { kr: "커뮤니티", en: "Community" },
   channels: [
-    { label: "Instagram", href: "#" },
+    { label: "Instagram @i.m_possible.esther", href: "https://www.instagram.com/i.m_possible.esther/" },
     { label: "YouTube", href: "#" },
-    { label: { kr: "카카오 오픈채팅", en: "Kakao Open Chat" }, href: "#" },
+    { label: { kr: "카카오톡 ID: esther3hground", en: "KakaoTalk ID: esther3hground" }, href: "#" },
   ] as { label: string | L; href: string }[],
 };
 
@@ -526,14 +526,14 @@ export const picks = {
   allTab: { kr: "전체", en: "All" },
 };
 
-/* --------------------------------------------------- Program (6-week cohort) */
+/* ------------------------------------------- Program (HER NEXT AI CLASS · 4 weeks) */
 export const program = {
   hero: {
-    eyebrow: { kr: "HER NEXT 6주 AI 코호트", en: "The HER NEXT 6-Week AI Cohort" },
-    title: { kr: "6주 AI 코호트", en: "6-Week AI Cohort" },
-    sub: { kr: "주차별 실습을 통해 아이디어를 실행 가능한 사업 계획으로 구체화하는 소수 정예 과정입니다.", en: "A small-group program that turns your idea into an actionable business plan through weekly hands-on sessions." },
+    eyebrow: { kr: "HER NEXT AI CLASS · 2기 초급반", en: "HER NEXT AI CLASS · Cohort 2 Beginner" },
+    title: { kr: "4주 AI 클래스 · 초급반", en: "4-Week AI Class · Beginner" },
+    sub: { kr: "4주 뒤, 나만의 AI 비서가 생깁니다. ChatGPT·Claude 기본부터 실습까지, 듣고 끝나는 강의가 아니라 내 일에 바로 쓰는 과정입니다.", en: "In four weeks, you'll have your own AI assistant. From ChatGPT and Claude basics to hands-on practice — not a lecture you just listen to, but skills you use at work right away." },
   },
-  weeksHead: { kr: "주차별 커리큘럼", en: "Week-by-week curriculum" },
+  weeksHead: { kr: "초급반 · 4주 커리큘럼", en: "Beginner · 4-week curriculum" },
   weekLabels: {
     session: { kr: "세션 내용", en: "Session" },
     homework: { kr: "이번 주 과제", en: "Homework" },
@@ -542,115 +542,68 @@ export const program = {
   weeks: [
     {
       no: "WEEK 1",
-      title: { kr: "생존 마인드 & AI 시대의 나의 다음", en: "Survival Mindset & Your Next in the AI Era" },
-      session: {
-        kr: "에스더의 재기 공식 공개 · AI가 바꾸는 여성 창업의 지형 · '나의 다음 챕터' 목표를 1문장으로 만들기",
-        en: "Esther's comeback formula revealed · How AI is reshaping women's entrepreneurship · Writing your \"next chapter\" goal in one sentence",
-      },
-      homework: {
-        kr: "나의 인생 타임라인 작성 + ChatGPT 첫 대화",
-        en: "Map your life timeline + your first ChatGPT conversation",
-      },
-      outcome: {
-        kr: "나만의 목표 선언문",
-        en: "Your personal goal statement",
-      },
+      title: { kr: "AI는 어떻게 답을 만들까", en: "How AI builds its answers" },
+      session: { kr: "원리 이해, 틀린 답 구별하는 법", en: "Understanding how it works, and how to spot a wrong answer" },
+      homework: { kr: "배운 내용을 내 일에 바로 써보고 피드백 받기", en: "Use it in your own work right away and get feedback" },
+      outcome: null,
     },
     {
       no: "WEEK 2",
-      title: { kr: "AI와 함께 자산 인벤토리", en: "Asset Inventory with AI" },
-      session: {
-        kr: "경험·재능·시간·네트워크, 4가지 자산 전부 꺼내기 · AI에게 내 강점을 분석시켜 돈이 되는 아이디어 뽑기",
-        en: "Unpacking your four assets — experience, talent, time, network · Having AI analyze your strengths to surface profitable ideas",
-      },
-      homework: {
-        kr: "자산 인벤토리 워크시트 100칸 채우기 + AI 아이디어 브레인스토밍",
-        en: "Fill all 100 lines of the worksheet + brainstorm ideas with AI",
-      },
-      outcome: {
-        kr: "수입 아이디어 후보 3가지",
-        en: "Three income idea candidates",
-      },
+      title: { kr: "질문 잘하는 법", en: "Asking good questions" },
+      session: { kr: "원하는 결과가 나오는 지시 5요소", en: "The five elements of an instruction that gets the result you want" },
+      homework: { kr: "배운 내용을 내 일에 바로 써보고 피드백 받기", en: "Use it in your own work right away and get feedback" },
+      outcome: null,
     },
     {
       no: "WEEK 3",
-      title: { kr: "AI 도구 실전 로드맵", en: "Your AI Tools Roadmap" },
-      session: {
-        kr: "ChatGPT·Claude·Canva 심화 실습 · 내 사업에 맞는 AI 도구 조합 정하기 · 프롬프트 잘 쓰는 법",
-        en: "Deep practice with ChatGPT, Claude & Canva · Choosing the right AI tool stack for your business · How to write great prompts",
-      },
-      homework: {
-        kr: "내 아이디어에 필요한 AI 작업 1개 완성하기",
-        en: "Complete one AI task your idea needs",
-      },
-      outcome: {
-        kr: "나의 AI 도구 세트 + 90일 스킬 로드맵",
-        en: "Your AI tool set + 90-day skill roadmap",
-      },
+      title: { kr: "용도별 도구 고르기", en: "Choosing the right tool for the job" },
+      session: { kr: "이메일 · 문서 · SNS 게시물 직접 만들기", en: "Making emails, documents and SNS posts yourself" },
+      homework: { kr: "배운 내용을 내 일에 바로 써보고 피드백 받기", en: "Use it in your own work right away and get feedback" },
+      outcome: null,
     },
     {
       no: "WEEK 4",
-      title: { kr: "AI로 나의 상품·브랜드 만들기", en: "Building Your Offer & Brand with AI" },
-      session: {
-        kr: "아이디어를 상품으로 바꾸기 (서비스·콘텐츠·부업) · AI로 로고·웹페이지·SNS 채널 만들기 실습",
-        en: "Turning your idea into an offer (service, content, or side hustle) · Hands-on: building your logo, webpage, and SNS channel with AI",
-      },
-      homework: {
-        kr: "내 상품 소개 한 페이지 완성",
-        en: "Complete your one-page offer",
-      },
-      outcome: {
-        kr: "판매 가능한 첫 상품 + 브랜드 + 채널",
-        en: "Your first sellable offer + brand + channel",
-      },
-    },
-    {
-      no: "WEEK 5",
-      title: { kr: "AI 마케팅으로 첫 고객 만들기", en: "Getting Your First Customer with AI Marketing" },
-      session: {
-        kr: "AI로 세일즈 문구·SNS 콘텐츠 만들기 · 가격 책정하는 법 · 한인 커뮤니티와 지인 네트워크 활용",
-        en: "Creating sales copy & SNS content with AI · How to price · Leveraging community and personal networks",
-      },
-      homework: {
-        kr: "실제로 3명에게 제안하기",
-        en: "Make your offer to three real people",
-      },
-      outcome: {
-        kr: "첫 제안 경험 — 또는 첫 고객!",
-        en: "Your first pitch experience — or your first customer!",
-      },
-    },
-    {
-      no: "WEEK 6",
-      title: { kr: "첫 실행 발표 & AI 자동화 90일 플랜", en: "First Execution & Your AI-Powered 90-Day Plan" },
-      session: {
-        kr: "전원 발표 + 에스더 1:1 피드백 · 고객 응대·콘텐츠 자동화 세팅 · 90일 확장 플랜 수립 · 수료식",
-        en: "Everyone presents + 1:1 feedback from Esther · Setting up customer & content automation · Building your 90-day scale plan · Graduation",
-      },
+      title: { kr: "안전하게, 매일 쓰기", en: "Using AI safely, every day" },
+      session: { kr: "개인정보 지키는 법, 나만의 AI 루틴", en: "Protecting personal information, and building your own AI routine" },
       homework: null,
-      outcome: {
-        kr: "나만의 AI 운영 시스템 + 90일 실행 플랜 + 수료증 + 평생 커뮤니티 멤버십",
-        en: "Your AI operating system + 90-day execution plan + certificate + lifetime community membership",
-      },
+      outcome: { kr: "수료 결과물 — My AI Assistant", en: "Your graduation project — My AI Assistant" },
     },
-  ] as { no: string; title: L; session: L; homework: L | null; outcome: L }[],
+  ] as { no: string; title: L; session: L; homework: L | null; outcome: L | null }[],
+  finalOutcome: { kr: "My AI Assistant", en: "My AI Assistant" },
+  finalOutcomeLabel: { kr: "수료 결과물", en: "Graduation project" },
+  howHead: { kr: "듣고 끝나는 강의가 아닙니다", en: "Not a lecture you just sit through" },
+  how: [
+    { big: { kr: "주 1회 2시간", en: "2 hours a week" }, desc: { kr: "강의 90분 + 그룹 코칭 30분", en: "90-min class + 30-min group coaching" } },
+    { big: { kr: "소수 정예", en: "Small groups" }, desc: { kr: "반별 8~10명, 한 명씩 챙깁니다", en: "8–10 per class, with personal attention" } },
+    { big: { kr: "워크북", en: "Workbook" }, desc: { kr: "수업 내용을 정리한 전용 교재", en: "A dedicated workbook for every class" } },
+    { big: { kr: "매주 과제", en: "Weekly practice" }, desc: { kr: "내 일에 바로 써보고 피드백", en: "Use it in your work, then get feedback" } },
+  ] as { big: L; desc: L }[],
+  levelsHead: { kr: "다음 단계도 준비되어 있어요", en: "The next steps are ready too" },
+  levels: [
+    { tag: { kr: "초급", en: "Beginner" }, title: { kr: "AI 비서", en: "AI assistant" }, now: true },
+    { tag: { kr: "중급", en: "Intermediate" }, title: { kr: "AI 업무 흐름", en: "AI workflows" }, now: false },
+    { tag: { kr: "고급", en: "Advanced" }, title: { kr: "내 웹사이트 · 앱", en: "Your own website & app" }, now: false },
+  ] as { tag: L; title: L; now: boolean }[],
+  levelsNote: { kr: "1기 수료생과 함께 다듬은 2기 과정", en: "Refined together with Cohort 1 graduates" },
   includedHead: { kr: "포함 사항", en: "What's included" },
   included: [
-    { kr: "주 1회 90분 라이브 세션 (줌)", en: "Weekly 90-min live sessions on Zoom" },
-    { kr: "주차별 AI 실습 워크북 & 과제", en: "Weekly AI practice workbook & assignments" },
-    { kr: "기수 전용 단톡방 코칭", en: "Private group chat coaching" },
-    { kr: "에스더 1:1 피드백 세션 1회", en: "One 1:1 feedback session with Esther" },
-    { kr: "수료 후 HER NEXT 커뮤니티 평생 멤버십", en: "Lifetime alumni community access" },
+    { kr: "주 1회 2시간 라이브 (강의 90분 + 그룹 코칭 30분) · 4주", en: "Weekly 2-hour live session (90-min class + 30-min group coaching) · 4 weeks" },
+    { kr: "수업 내용을 정리한 전용 워크북", en: "A dedicated workbook for every class" },
+    { kr: "매주 과제 — 내 일에 바로 써보고 피드백", en: "Weekly practice — use it in your work, then get feedback" },
+    { kr: "반별 8~10명 소수 정예", en: "Small classes of 8–10" },
+    { kr: "수료 결과물: My AI Assistant", en: "Graduation project: My AI Assistant" },
   ] as L[],
   pricing: {
-    tag: { kr: "1기 파운딩 클래스", en: "Founding class" },
+    tag: { kr: "2기 초급반 · 4주 과정", en: "Cohort 2 Beginner · 4 weeks" },
     regularLabel: { kr: "정가", en: "Regular" },
-    regular: "$890",
-    special: "$490",
-    specialLabel: { kr: "1기 특별가", en: "Founding class" },
+    regular: "$998",
+    special: "$499",
+    specialLabel: { kr: "2기 한정 50% 할인", en: "Cohort 2 · 50% off" },
+    discountLabel: { kr: "2기 한정 50% 할인", en: "Cohort 2 discount (50%)" },
+    afterNote: { kr: "3기부터 정가", en: "Regular price from Cohort 3" },
     note: {
-      kr: "1기 정원 8명 · 월요일 아침반 / 목요일 저녁반 · 11월 2주차 개강",
-      en: "Cohort 1: 8 seats · Monday morning or Thursday evening class · starts the 2nd week of November",
+      kr: "반별 8~10명 · 11/16 월 오전반 / 11/19 목 저녁반 · 반별 정원이 차면 선착순 마감",
+      en: "8–10 per class · Mon 11/16 morning or Thu 11/19 evening · first come, first served",
     },
     cta: { kr: "오픈 알림 신청", en: "Get notified" },
   },
@@ -666,13 +619,22 @@ export const program = {
   },
   forHead: { kr: "이런 분께 추천합니다", en: "Who this is for" },
   forWhom: [
-    { kr: "AI를 배워 내 사업에 쓰고 싶은 분", en: "Anyone who wants to use AI in their business" },
-    { kr: "자녀를 키우고 다시 시작하는 분", en: "Restarting after raising children" },
-    { kr: "홀로 서야 하는 싱글맘", en: "Single moms standing on their own" },
-    { kr: "인생 후반전을 준비하는 50+", en: "Women 50+ planning their second half" },
+    { kr: "내 사업을 혼자 다 챙기느라 바쁜 대표님", en: "Business owners juggling everything alone" },
+    { kr: "리얼터 · 보험 · 영업처럼 고객 연락이 많은 분", en: "Realtors, insurance and sales pros with lots of client contact" },
+    { kr: "회사 업무를 더 빠르게 끝내고 싶은 직장인", en: "Employees who want to finish work faster" },
+    { kr: "SNS · 블로그 · 유튜브를 시작하고 싶은 분", en: "Anyone starting SNS, a blog or YouTube" },
+    { kr: "사이드 허슬이나 창업을 준비하는 분", en: "Anyone preparing a side hustle or a business" },
+    { kr: "AI가 궁금하지만 어디서부터 할지 모르는 분", en: "Curious about AI but not sure where to start" },
   ] as L[],
   faqHead: { kr: "자주 묻는 질문", en: "Frequently asked questions" },
   faq: [
+    {
+      q: { kr: "코딩을 몰라도 되나요?", en: "Do I need to know how to code?" },
+      a: {
+        kr: "괜찮습니다. 초급반은 코딩 없이 ChatGPT·Claude 기본부터 시작해요.",
+        en: "Not at all. The beginner class starts from ChatGPT and Claude basics — no coding.",
+      },
+    },
     {
       q: { kr: "영어를 잘 못해도 되나요?", en: "Do I need to speak English well?" },
       a: {
@@ -690,15 +652,15 @@ export const program = {
     {
       q: { kr: "AI를 한 번도 써본 적 없는데 괜찮을까요?", en: "I've never used AI. Is that okay?" },
       a: {
-        kr: "완전히 괜찮습니다. 1주차에 ChatGPT 첫 대화부터 시작합니다.",
-        en: "Absolutely. Week 1 starts with your very first ChatGPT conversation.",
+        kr: "완전히 괜찮습니다. 1주차에 AI가 어떻게 답을 만드는지부터 함께 시작합니다.",
+        en: "Absolutely. Week 1 starts with how AI builds its answers.",
       },
     },
     {
       q: { kr: "시간이 많지 않아도 가능한가요?", en: "Can I do this without much free time?" },
       a: {
-        kr: "주 3~4시간이면 충분하도록 설계했습니다. AI가 시간을 벌어줍니다.",
-        en: "It's designed so that 3–4 hours a week is enough. AI buys back your time.",
+        kr: "수업은 주 1회 2시간입니다. 과제는 내 일에 바로 써보는 것이라 따로 시간을 많이 내지 않아도 돼요.",
+        en: "Class is 2 hours a week. Practice means using AI in your real work, so it doesn't take much extra time.",
       },
     },
     {

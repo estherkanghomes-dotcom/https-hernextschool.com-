@@ -11,6 +11,7 @@ import { BrandPhoto } from "@/components/BrandPhoto";
 import { ProductCards } from "@/components/ProductCards";
 import { WeeksPreview, HomeFaq } from "@/components/HomeExtras";
 import { HomeBanner, CategoryRow, NotesRow, FreeRow } from "@/components/HomeBrowse";
+import { MyDayWithAI, RealResults } from "@/components/HomeProof";
 // Photos are credibility-first: only the founder's REAL photos render.
 // Drop-in slots: src/assets/esther-hero.jpg (landing hero seminar stage photo),
 // src/assets/esther-story.jpg (founder portrait). Until a real file exists at the
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "AI로 내 사업을 시작하는 한인 여성을 위한 비즈니스 스쿨. AI 아이디어 발굴부터 브랜딩·마케팅·운영 자동화까지 실전으로 배웁니다.",
+          "HER NEXT AI CLASS 2기 초급반 모집. 리얼터 한 명이 AI 3명과 팀처럼 일하는 법을 4주 동안 그대로 알려드립니다. 11/16 월 오전반 · 11/19 목 저녁반.",
       },
       { property: "og:title", content: "HER NEXT | 미국 한인 여성을 위한 비즈니스 스쿨" },
       {
@@ -47,13 +48,17 @@ function Index() {
 
       <CategoryRow />
 
+      <MyDayWithAI />
+
+      <RealResults />
+
       <ProductCards />
+
+      <WeeksPreview />
 
       <NotesRow />
 
       <FreeRow />
-
-      <WeeksPreview />
 
       {/* What you'll learn */}
       <section className="bg-cream">
@@ -95,7 +100,7 @@ function Index() {
                 to="/program"
                 className="inline-flex items-center gap-1.5 border-b-2 border-berry pb-0.5 text-sm font-semibold text-plum transition-colors hover:text-berry"
               >
-                {lang === "kr" ? "커리큘럼 자세히 보기" : "See the 6-week cohort"}
+                {lang === "kr" ? "4주 AI 클래스 자세히 보기" : "See the 4-week AI Class"}
                 <span aria-hidden>→</span>
               </Link>
             </div>
@@ -177,7 +182,7 @@ function Index() {
               search={{ item: "cohort" }}
               className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-berry px-8 py-4 text-base font-semibold text-berry-foreground transition-transform hover:-translate-y-0.5"
             >
-              {lang === "kr" ? "1기 수강 신청하기" : "Enroll in Cohort 1"}
+              {lang === "kr" ? "2기 수강 신청하기" : "Enroll in Cohort 2"}
               <RisingArrow className="h-4 w-4" />
             </Link>
           </Reveal>

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/programs")({
       {
         name: "description",
         content:
-          "AI로 아이디어에서 실제 사업체까지. 여성 창업자를 위한 6단계 AI 로드맵과 6주 AI 코호트, 1:1 컨설팅.",
+          "HER NEXT AI CLASS 2기 초급반(4주) — ChatGPT·Claude 기본부터 실습까지. 초급 → 중급 → 고급 단계별 과정과 1:1 컨설팅.",
       },
       { property: "og:title", content: "프로그램 | HER NEXT" },
       { property: "og:description", content: "미국 창업·법인설립, 처음부터 끝까지." },
@@ -42,9 +42,10 @@ function Programs() {
   const jumps = [
     { id: "roadmap", kr: "6단계 로드맵", en: "Roadmap" },
     { id: "offers", kr: "참여 방법", en: "How to join" },
-    { id: "cohort", kr: "6주 코호트 일정", en: "Cohort weeks" },
+    { id: "cohort", kr: "4주 커리큘럼", en: "4-week curriculum" },
     { id: "pricing", kr: "가격 · 포함 사항", en: "Pricing" },
     { id: "faq", kr: "FAQ", en: "FAQ" },
+    { id: "cardnews", kr: "카드뉴스", en: "Card news" },
   ];
 
   return (
@@ -146,7 +147,7 @@ function Programs() {
                   search={{ s: "cohort" }}
                   className="ml-4 mt-8 inline-flex items-center gap-1.5 border-b-2 border-berry pb-0.5 text-sm font-semibold text-plum transition-colors hover:text-berry"
                 >
-                  {lang === "kr" ? "6주 코호트 자세히 보기" : "Cohort details"}
+                  {lang === "kr" ? "4주 커리큘럼 보기" : "See the curriculum"}
                   <span aria-hidden>→</span>
                 </Link>
                 <p className="mt-3 text-xs text-ink/50">{o.main.note[lang]}</p>

@@ -11,6 +11,7 @@ import { CohortSummaryCard } from "./HomeExtras";
 import { useLang } from "@/lib/i18n";
 import { home, curriculum, story } from "@/lib/content";
 import { notesMeta, publishedNotes } from "@/data/notes";
+import { products, fmtUSD } from "@/lib/products";
 
 /* ---------------- Main banner carousel (Class101 / Kyobo style) ---------------- */
 export function HomeBanner() {
@@ -38,26 +39,31 @@ export function HomeBanner() {
         <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.15] [&_.block]:whitespace-nowrap sm:text-5xl md:text-6xl">
           {kr ? (
             <>
-              <span className="block">미국에서 AI로</span>
+              <span className="block">AI, 아직도</span>
               <span className="block">
                 <span className="relative inline-block">
-                  <span className="relative z-10">내 사업</span>
+                  <span className="relative z-10">검색창처럼</span>
                   <span aria-hidden className="absolute -bottom-1 left-0 h-1.5 w-full rounded-full bg-berry/80 md:h-2" />
-                </span>{" "}
-                시작하기
+                </span>
               </span>
+              <span className="block">쓰고 계신가요?</span>
             </>
           ) : (
             <>
-              <span className="block">Start your business</span>
-              <span className="block">in the US with AI</span>
+              <span className="block">Still using AI</span>
+              <span className="block">
+                <span className="relative inline-block">
+                  <span className="relative z-10">like a search box?</span>
+                  <span aria-hidden className="absolute -bottom-1 left-0 h-1.5 w-full rounded-full bg-berry/80 md:h-2" />
+                </span>
+              </span>
             </>
           )}
         </h1>
         <p className="mt-6 max-w-lg text-base leading-relaxed text-ink/75 md:text-lg">{h.subShort[lang]}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/checkout" search={{ item: "cohort" }} className="inline-flex items-center justify-center gap-2 rounded-md bg-berry px-7 py-4 text-base font-bold text-white transition-transform hover:-translate-y-0.5">
-            {kr ? "1기 수강 신청 · $490" : "Enroll · $490"}
+            {kr ? `2기 수강 신청 · ${fmtUSD(products.cohort.price)}` : `Enroll · ${fmtUSD(products.cohort.price)}`}
             <RisingArrow className="h-4 w-4" />
           </Link>
           <Link to="/planner" className="inline-flex items-center justify-center rounded-md border border-plum/30 bg-white px-7 py-4 text-base font-bold text-plum transition-colors hover:border-berry hover:text-berry">

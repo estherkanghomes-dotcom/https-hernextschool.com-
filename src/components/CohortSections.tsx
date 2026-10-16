@@ -11,8 +11,9 @@ import {
 import { useLang } from "@/lib/i18n";
 import { program } from "@/lib/content";
 import { Prose } from "@/components/Prose";
+import { CardNewsGallery } from "@/components/HomeProof";
 
-// 6-week cohort details (weeks, pricing & consult, who it's for, FAQ, final CTA) — part of the single /programs page.
+// 4-week AI Class details (weeks, how we learn, levels, pricing & consult, who it's for, FAQ, card news, final CTA) — part of the single /programs page.
 export function CohortSections() {
   const { lang } = useLang();
   return (
@@ -70,14 +71,16 @@ export function CohortSections() {
                               </p>
                             </div>
                           )}
-                          <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-berry">
-                              {program.weekLabels.outcome[lang]}
-                            </p>
-                            <p className="mt-1.5 font-semibold leading-relaxed text-plum">
-                              {w.outcome[lang]}
-                            </p>
-                          </div>
+                          {w.outcome && (
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-berry">
+                                {program.weekLabels.outcome[lang]}
+                              </p>
+                              <p className="mt-1.5 font-semibold leading-relaxed text-plum">
+                                {w.outcome[lang]}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       </AccordionContent>
                     </AccordionItem>
@@ -86,6 +89,49 @@ export function CohortSections() {
               </Reveal>
             ))}
           </ol>
+          <Reveal>
+            <div className="mt-8 flex items-center justify-between gap-4 rounded-2xl bg-plum px-7 py-6 text-cream">
+              <span className="text-sm text-cream/75">{program.finalOutcomeLabel[lang]}</span>
+              <span className="font-serif text-2xl font-semibold text-berry-soft">{program.finalOutcome[lang]}</span>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* How we learn + levels */}
+      <section id="how" className="scroll-mt-28 bg-plum text-cream">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-berry-soft">How we learn</p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold md:text-4xl">{program.howHead[lang]}</h2>
+          </Reveal>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {program.how.map((h, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="h-full rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+                  <p className="font-serif text-2xl font-semibold text-berry-soft">{h.big[lang]}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-cream/80">{h.desc[lang]}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <div className="mt-10 rounded-2xl bg-cream p-7 text-plum">
+              <p className="text-sm font-semibold text-berry">{program.levelsHead[lang]}</p>
+              <ol className="mt-4 grid gap-3 sm:grid-cols-3">
+                {program.levels.map((l, i) => (
+                  <li key={i} className={"rounded-xl px-5 py-4 " + (l.now ? "bg-plum text-cream" : "border border-plum/15 bg-white")}>
+                    <span className={"text-xs font-bold " + (l.now ? "text-berry-soft" : "text-berry")}>
+                      {l.tag[lang]}
+                      {l.now && (lang === "kr" ? " · 이번 2기" : " · Cohort 2 now")}
+                    </span>
+                    <p className="mt-1 text-lg font-bold">{l.title[lang]}</p>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-4 text-sm text-ink/60">{program.levelsNote[lang]}</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -127,7 +173,7 @@ export function CohortSections() {
                 </div>
                 <p className="mt-1 text-sm text-berry-soft">
                   {program.pricing.regularLabel[lang]} {program.pricing.regular} →{" "}
-                  {program.pricing.specialLabel[lang]} {program.pricing.special}
+                  {program.pricing.specialLabel[lang]} {program.pricing.special} · {program.pricing.afterNote[lang]}
                 </p>
                 <p className="mt-5 text-sm leading-relaxed text-cream/75">
                   {program.pricing.note[lang]}
@@ -179,7 +225,7 @@ export function CohortSections() {
               {program.forHead[lang]}
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {program.forWhom.map((f, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="h-full rounded-2xl border border-plum/10 bg-white p-7 shadow-sm">
@@ -221,13 +267,16 @@ export function CohortSections() {
         </div>
       </section>
 
+      <CardNewsGallery />
+
       {/* CTA */}
       <section id="apply" className="scroll-mt-28 bg-plum text-cream">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center">
           <Reveal>
             <h2 className="font-serif text-3xl font-semibold md:text-4xl">
-              {program.hero.title[lang]}
+              {lang === "kr" ? "2기 등록, 지금 받습니다" : "Cohort 2 enrollment is open"}
             </h2>
+            <p className="mt-4 text-cream/75">{program.pricing.note[lang]}</p>
             <Link
               to="/checkout"
               search={{ item: "cohort" }}

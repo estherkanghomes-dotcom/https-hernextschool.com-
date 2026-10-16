@@ -4,7 +4,8 @@ import { CheckCircle2, Lock, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { useLang } from "@/lib/i18n";
 import { products, fmtUSD, type ProductId } from "@/lib/products";
-import { cohort1, type ClassId } from "@/lib/cohort";
+import { program } from "@/lib/content";
+import { cohort, type ClassId } from "@/lib/cohort";
 
 // DEMO checkout: nothing is charged, stored or sent. Replace `pay()` with a Stripe Checkout redirect to go live.
 export const DEMO_MODE = true;
@@ -61,7 +62,7 @@ function Checkout() {
               <div className="flex justify-between"><span className="text-ink/60">{kr ? "주문번호" : "Order"}</span><span className="font-bold text-plum">{order}</span></div>
               <div className="mt-2 flex justify-between"><span className="text-ink/60">{kr ? "상품" : "Item"}</span><span className="font-semibold text-plum">{p.name[lang]}</span></div>
               {cls && (
-                <div className="mt-2 flex justify-between"><span className="text-ink/60">{kr ? "반" : "Class"}</span><span className="font-semibold text-plum">{cohort1.classes.find((c) => c.id === cls)?.[lang]}</span></div>
+                <div className="mt-2 flex justify-between"><span className="text-ink/60">{kr ? "반" : "Class"}</span><span className="font-semibold text-plum">{cohort.classes.find((c) => c.id === cls)?.[lang]}</span></div>
               )}
               <div className="mt-2 flex justify-between"><span className="text-ink/60">{kr ? "결제 금액" : "Total"}</span><span className="font-bold text-berry">{fmtUSD(p.price)}</span></div>
               <div className="mt-2 flex justify-between"><span className="text-ink/60">{kr ? "안내 메일" : "Email"}</span><span className="text-plum">{form.email}</span></div>
@@ -107,12 +108,15 @@ function Checkout() {
               {item === "cohort" && (
                 <>
                   <h2 className="mt-8 text-lg font-extrabold text-plum">{kr ? "2. 반 선택" : "2. Choose a class"}</h2>
-                  <p className="mt-1 text-sm text-ink/60">{cohort1.start[lang]} · {kr ? `반별 정원 ${cohort1.capacity}명` : `${cohort1.capacity} seats`}</p>
+                  <p className="mt-1 text-sm text-ink/60">{cohort.name[lang]} · {cohort.format[lang]} · {cohort.capacity[lang]} · {kr ? "선착순 마감" : "first come, first served"}</p>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                    {cohort1.classes.map((c) => (
+                    {cohort.classes.map((c) => (
                       <label key={c.id} className={"flex cursor-pointer items-center gap-3 rounded-lg border p-4 text-sm font-bold transition-colors " + (cls === c.id ? "border-berry bg-berry/5 text-plum" : "border-plum/15 text-plum hover:border-plum/40")}>
-                        <input type="radio" name="cls" className="h-4 w-4 accent-[#e15b64]" checked={cls === c.id} onChange={() => setCls(c.id)} />
-                        {c[lang]}
+                        <input type="radio" name="cls" className="h-4 w-4 shrink-0 accent-[#e15b64]" checked={cls === c.id} onChange={() => setCls(c.id)} />
+                        <span>
+                          <span className="block">{c[lang]}</span>
+                          <span className="mt-0.5 block text-xs font-normal text-ink/60">{c.note[lang]}</span>
+                        </span>
                       </label>
                     ))}
                   </div>
@@ -156,7 +160,7 @@ function Checkout() {
                 {p.regular && (
                   <>
                     <div className="flex justify-between text-ink/60"><span>{kr ? "정가" : "Regular"}</span><span className="line-through">{fmtUSD(p.regular)}</span></div>
-                    <div className="flex justify-between text-berry"><span>{kr ? "1기 특별 할인" : "Founding discount"}</span><span>-{fmtUSD(p.regular - p.price)}</span></div>
+                    <div className="flex justify-between text-berry"><span>{program.pricing.discountLabel[lang]}</span><span>-{fmtUSD(p.regular - p.price)}</span></div>
                   </>
                 )}
                 <div className="flex justify-between pt-2 text-base font-extrabold text-plum"><span>{kr ? "총 결제 금액" : "Total"}</span><span>{fmtUSD(p.price)}</span></div>

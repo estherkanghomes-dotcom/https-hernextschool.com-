@@ -67,8 +67,8 @@ export const notesMeta = {
     en: "The strategy in this story",
   },
   ctaHead: {
-    kr: "이런 전략을 6주 안에 배우고 싶다면",
-    en: "Want to learn strategies like this in 6 weeks?",
+    kr: "AI로 이렇게 일하는 법을 4주 안에 배우고 싶다면",
+    en: "Want to learn to work like this with AI in 4 weeks?",
   },
   ctaProgram: { kr: "프로그램 보기", en: "See the program" },
   ctaNewsletter: { kr: "뉴스레터 구독", en: "Join the newsletter" },

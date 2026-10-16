@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
 import { program } from "@/lib/content";
 import { products, fmtUSD } from "@/lib/products";
-import { cohort1 } from "@/lib/cohort";
+import { cohort } from "@/lib/cohort";
 
 // Hero side card: everything a buyer needs at a glance.
 export function CohortSummaryCard() {
@@ -12,16 +12,16 @@ export function CohortSummaryCard() {
   const kr = lang === "kr";
   const p = products.cohort;
   const rows = [
-    [kr ? "개강" : "Start", cohort1.startShort[lang]],
-    [kr ? "수업" : "Format", cohort1.format[lang]],
-    [kr ? "반" : "Classes", cohort1.classes.map((c) => c[lang]).join(" / ")],
-    [kr ? "정원" : "Seats", kr ? `${cohort1.capacity}명 소수 정예` : `${cohort1.capacity} per class`],
+    [kr ? "개강" : "Start", cohort.startShort[lang]],
+    [kr ? "수업" : "Format", cohort.format[lang]],
+    [kr ? "반" : "Classes", kr ? "월요일 오전반 / 목요일 저녁반" : "Mon morning / Thu evening"],
+    [kr ? "정원" : "Seats", kr ? `${cohort.capacity.kr} 소수 정예` : cohort.capacity.en],
   ];
   return (
     <div className="w-full rounded-2xl bg-plum p-7 text-white shadow-2xl">
       <span className="inline-flex items-center gap-1.5 rounded-full bg-berry px-3 py-1 text-xs font-bold">
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
-        {cohort1.label[lang]}
+        {cohort.label[lang]}
       </span>
       <p className="mt-4 text-2xl font-extrabold">{p.name[lang]}</p>
       <dl className="mt-5 space-y-2.5 text-sm">
@@ -37,18 +37,19 @@ export function CohortSummaryCard() {
         <span className="text-3xl font-extrabold text-berry-soft">{fmtUSD(p.price)}</span>
         {p.regular && <span className="rounded bg-berry px-2 py-0.5 text-xs font-bold">{Math.round((1 - p.price / p.regular) * 100)}% OFF</span>}
       </div>
+      <p className="mt-1.5 text-xs text-white/60">{program.pricing.afterNote[lang]}</p>
       <Link
         to="/checkout"
         search={{ item: "cohort" }}
         className="mt-5 block rounded-md bg-berry py-3.5 text-center text-base font-bold text-white transition-transform hover:-translate-y-0.5"
       >
-        {kr ? "1기 수강 신청하기" : "Enroll in Cohort 1"}
+        {kr ? "2기 수강 신청하기" : "Enroll in Cohort 2"}
       </Link>
     </div>
   );
 }
 
-// 6-week curriculum preview: titles only, links to the full program page.
+// 4-week curriculum preview: titles only, links to the full program page.
 export function WeeksPreview() {
   const { lang } = useLang();
   const kr = lang === "kr";
@@ -56,23 +57,30 @@ export function WeeksPreview() {
     <section className="bg-blush">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-berry">{kr ? "6주 커리큘럼" : "6-week curriculum"}</p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-plum md:text-4xl">{kr ? "6주 동안 이렇게 진행됩니다" : "How the six weeks run"}</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-berry">{kr ? "초급반 · 4주 커리큘럼" : "Beginner · 4-week curriculum"}</p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-plum md:text-4xl">{kr ? "4주 뒤, 나만의 AI 비서가 생깁니다" : "In four weeks, your own AI assistant"}</h2>
         </Reveal>
-        <ol className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {program.weeks.map((w, i) => (
             <li key={i}>
               <Link
                 to="/programs"
                 search={{ s: "cohort" }}
-                className="group flex h-full items-start gap-4 rounded-xl border border-plum/10 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-berry hover:shadow-md"
+                className="group flex h-full flex-col items-start gap-3 rounded-xl border border-plum/10 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-berry hover:shadow-md"
               >
                 <span className="shrink-0 rounded-md bg-plum px-2.5 py-1 text-xs font-bold text-white">WEEK {i + 1}</span>
-                <span className="font-bold leading-snug text-plum group-hover:text-berry">{w.title[lang]}</span>
+                <span>
+                  <span className="block font-bold leading-snug text-plum group-hover:text-berry">{w.title[lang]}</span>
+                  <span className="mt-1 block text-sm leading-snug text-ink/60">{w.session[lang]}</span>
+                </span>
               </Link>
             </li>
           ))}
         </ol>
+        <div className="mx-auto mt-4 flex max-w-5xl items-center justify-between gap-4 rounded-xl bg-plum px-6 py-5 text-white">
+          <span className="text-sm text-white/75">{program.finalOutcomeLabel[lang]}</span>
+          <span className="text-xl font-extrabold text-berry-soft">{program.finalOutcome[lang]}</span>
+        </div>
         <div className="mt-8 text-center">
           <Link to="/programs" search={{ s: "cohort" }} className="inline-flex items-center gap-1.5 border-b-2 border-berry pb-0.5 text-sm font-bold text-plum hover:text-berry">
             {kr ? "주차별 상세 내용 보기" : "See each week in detail"} <span aria-hidden>→</span>
