@@ -53,7 +53,7 @@ export function AboutTabs({ current }: { current: (typeof aboutTabs)[number]["to
 
 // 무료 AI 진단 · 에스더의 픽 · 무료 자료 · AI 플래너
 const freeTabs = [
-  { to: "/ai-diagnosis/", kr: "무료 AI 진단", en: "Free AI check", static: true },
+  { to: "/ai-diagnosis", kr: "무료 AI 진단", en: "Free AI check", static: true },
   { to: "/picks", kr: "에스더의 픽", en: "Esther's Picks" },
   { to: "/resources", kr: "무료 자료", en: "Free Resources" },
   { to: "/planner", kr: "AI 플래너", en: "AI Planner" },

@@ -34,7 +34,7 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-3 text-[13px] text-ink/75">
-          <a href="/ai-diagnosis/" className="whitespace-nowrap rounded border border-berry px-2.5 py-1 font-bold text-berry transition-colors hover:bg-berry hover:text-white">
+          <a href="/ai-diagnosis" className="whitespace-nowrap rounded border border-berry px-2.5 py-1 font-bold text-berry transition-colors hover:bg-berry hover:text-white">
             {lang === "kr" ? "무료 AI 진단" : "Free AI check"}
           </a>
           <Link to="/checkout" search={{ item: "cohort" }} className="hidden whitespace-nowrap rounded bg-berry px-3 py-1 font-bold text-white hover:opacity-90 sm:inline">

@@ -186,7 +186,7 @@ export function DiagnosisPromo({ tone = "light" }: { tone?: "light" | "dark" }) 
               </p>
             </div>
             <a
-              href="/ai-diagnosis/"
+              href="/ai-diagnosis"
               className="shrink-0 rounded-md bg-berry px-7 py-4 text-base font-bold text-white transition-transform hover:-translate-y-0.5"
             >
               {kr ? "무료 AI 진단 시작하기 →" : "Start the free AI check →"}
